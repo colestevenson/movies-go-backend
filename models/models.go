@@ -28,16 +28,16 @@ type Movie struct {
 	Rating      int            `json:"rating"`
 	MPAARating  string         `json:"mpaa_rating"`
 	CreatedAt   time.Time      `json:"-"`
-	UpdatedAt    time.Time      `json:"-"`
+	UpdatedAt   time.Time      `json:"-"`
 	MovieGenre  map[int]string `json:"genres"`
 }
 
 // type for genres table in database
 type Genre struct {
-	ID        int       `json:"-"`
+	ID        int       `json:"id"`
 	GenreName string    `json:"genre_name"`
 	CreatedAt time.Time `json:"-"`
-	UpdateAt  time.Time `json:"-"`
+	UpdatedAt time.Time `json:"-"`
 }
 
 // type for moviegenre table in database
@@ -47,5 +47,5 @@ type MovieGenre struct {
 	GenreID   int       `json:"-"`
 	Genre     Genre     `json:"genre"`
 	CreatedAt time.Time `json:"-"`
-	UpdateAt  time.Time `json:"-"`
+	UpdatedAt time.Time `json:"-"`
 }
